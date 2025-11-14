@@ -6,9 +6,12 @@ sphinx>=7.0
 sphinx-rtd-theme>=2.0
 myst-parser>=3.0
 
-# Needed for myst "linkify" extension
+# MyST linkify extension
 linkify-it-py>=2.0.0
 
-# Runtime deps so autodoc can import the module
+# Auto API generation
+sphinx-autoapi>=3.0.0
+
+# Runtime deps so autodoc/autoapi can import the code
 numpy>=1.24
 matplotlib>=3.8

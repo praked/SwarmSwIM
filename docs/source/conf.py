@@ -42,6 +42,8 @@ extensions = [
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",  # Google/Numpy docstring support
     "sphinx.ext.viewcode",  # Link to source
+    "autoapi.extension",       # <-- add this
+
 ]
 
 # Recognize both .rst and .md
@@ -85,3 +87,26 @@ html_static_path = ["_static"]
 # Optional: nice sidebar title/logo hooks if you add them later
 # html_logo = "_static/logo.png"
 # html_favicon = "_static/favicon.ico"
+
+# -----------------------------------------------------------------------------
+# AutoAPI configuration
+# -----------------------------------------------------------------------------
+
+# Treat this as a Python project
+autoapi_type = "python"
+
+# Point AutoAPI at your package source.
+# Layout is:
+#   <repo root>/
+#       SwarmSwIM/
+#       docs/
+#           source/
+#               conf.py
+autoapi_dirs = [os.path.abspath(os.path.join("..", "..", "SwarmSwIM"))]
+
+# Where generated API docs will live within the Sphinx source tree
+autoapi_root = "api"
+
+# Optional niceties
+autoapi_keep_files = True
+autoapi_add_toctree_entry = False  # we’ll manage toctree manually
